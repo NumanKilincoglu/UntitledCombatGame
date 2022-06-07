@@ -1,5 +1,5 @@
 import webbrowser
-import pygame, sys, MaliButton
+import pygame, sys, AlternativeButton
 
 from Button import Button
 import mysql.connector
@@ -21,7 +21,7 @@ mali_image = pygame.image.load('assets/Characters/HeroKnight/Idle/0.png').conver
 bandit_image = pygame.image.load('assets/Characters/bandit/Idle/0.png').convert_alpha()
 numan_image = pygame.image.load('assets/Characters/Light Bandit/Idle/0.png').convert_alpha()
 start_image = pygame.transform.scale(start_image, (int(start_image.get_width() * 5), int(start_image.get_height() * 5)))
-start_button = MaliButton.MaliButton(567, 50, start_image, 0.5)
+start_button = AlternativeButton.MaliButton(567, 50, start_image, 0.5)
 char_scale = 2
 hitboxes = []
 health_list = []
@@ -170,7 +170,7 @@ class InputBox:
 
 
 def champ_button(image, x, y):
-    return MaliButton.MaliButton(x, y, image, char_scale)
+    return AlternativeButton.MaliButton(x, y, image, char_scale)
 
 
 class Champ():
@@ -755,7 +755,7 @@ def leaderBoard():
     while run:
         pygame.display.set_caption("Main Menu")
         showLeaderBoard()
-        back_button1 = MaliButton.MaliButton(32, 16, ok_img, 1)
+        back_button1 = AlternativeButton.MaliButton(32, 16, ok_img, 1)
 
         if back_button1.draw(Screen):
             main_menu(first_player_name, second_player_name)
